@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'dslim/docker-slim' 
-        }
-    }
+    agent any
     stages {
         stage('Build') {
             steps {
