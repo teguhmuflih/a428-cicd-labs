@@ -2,11 +2,11 @@ pipeline {
     agent {
         docker {
             image 'node:16-buster-slim' 
-            args '-p 3000:3000' 
+            args '-u root:root'  // Menggunakan args untuk set UID/GID jika perlu, tidak untuk port mapping.
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
                 sh 'npm install'
             }
