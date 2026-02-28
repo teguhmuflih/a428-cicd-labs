@@ -1,8 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:16-buster-slim' 
-            args '-u root:root'  // Menggunakan args untuk set UID/GID jika perlu, tidak untuk port mapping.
+            image 'dslim/docker-slim' 
         }
     }
     stages {
